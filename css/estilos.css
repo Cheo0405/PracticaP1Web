@@ -44,3 +44,14 @@
 .header .nav-links li a:hover{
     color: #ffbc0e;
 }
+
+.inicio a {
+    padding-left: 5%;
+}
+.inicio img {
+    min-width: 400px;
+    padding: 3%;
+    height: 500px;
+    width: 550px;
+    border-radius: 50%;
+}
