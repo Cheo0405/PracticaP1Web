@@ -6,6 +6,9 @@
     height: 85px;
     padding: 5px 10%;
 }
+.tittle{
+    padding: 3%;
+}
 
 .header .logo{
     cursor: pointer;
@@ -55,3 +58,34 @@
     width: 550px;
     border-radius: 50%;
 }
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 5%;
+}
+
+.card {
+    width: 30%;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 20px;
+    margin: 10px 0;
+}
+

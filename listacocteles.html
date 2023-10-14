@@ -6,29 +6,32 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/estilos.css">
-    <img type="icon" href="img/coctel.png">
+    <link rel="icon" type="image/png" href="img/coctel.png">
     <title>Lista Cocteles</title>
 </head>
 <body>
     <header class="header">
         <div class="logo">
-            <a href="index.html" ><img src="img/logo-encabezado.png" alt="Logo de la marca"></a>o-encabezado.png" alt="Logo de la marca">
+            <a href="index.html"><img src="img/logo-encabezado.png"></a>
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="listacocteles.html">LISTA DE COCTELES</a></li> <!--  pIENSO HACERLO EN LA LISTA CUANDO LO MUESTRE UN BOTON QUE DIGA AGREGAR Y 
-                    LO LLEVE A LA OTRA PAGINA E INIDIQUE LA CANTDIAD DE COCTELES Y LA CANTDIAD A APAGAR-->
+                <li><a href="listacocteles.html">LISTA DE COCTELES</a></li>
                 <li><a href="carrito.html">VER CARRITO</a></li> 
-        </ul>           
+            </ul>           
         </nav>
     </header>
-    <div class="coctel-container">
-
+    <h1 class="tittle">Cocteles Sin Alcohol</h1>
+    <div class="card-container">
+        <div id="coctelList" class="card" style="width: 18rem;">
+            <img id="coctelImage" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title" id="nameCoctel"></h5>
+                <a href="agregarcocteles.html" class="btn btn-primary">Agregar al carrito</a>
+            </div>
+        </div>
+        <!-- Repite este bloque para cada tarjeta de coctel -->
     </div>
-    
-    <!-- <div class="spinner-border text-success" role="status">
-        <span class="visually-hidden">Loading...</span>-->
-        <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
-
 </html>
