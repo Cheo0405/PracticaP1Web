@@ -49,9 +49,11 @@ function listadoBebidasSinAlcohol() {
             cardTitle.textContent = cocktail.strDrink;
 
             const p = document.createElement('p');
+            p.id = 'precio';
             p.textContent = 'Precio: ' + cocktail.idDrink; 
 
             const link = document.createElement('a');
+            link.id = 'agregar';
             link.href = 'agregarcocteles.html';
             link.className = 'btn btn-primary';
             link.textContent = 'Agregar al carrito';
@@ -92,9 +94,11 @@ function listadoBebidasConAlcohol() {
             cardTitle.textContent = cocktail.strDrink;
 
             const p = document.createElement('p');
+            p.id = 'precio';
             p.textContent = 'Precio: ' + cocktail.idDrink; 
 
             const link = document.createElement('a');
+            link.id = 'agregar';
             link.href = 'agregarcocteles.html';
             link.className = 'btn btn-primary';
             link.textContent = 'Agregar al carrito';
@@ -136,9 +140,11 @@ function listadoBebidasOrdinarias() {
             cardTitle.textContent = cocktail.strDrink;
 
             const p = document.createElement('p');
+            p.id = 'precio';
             p.textContent = 'Precio: ' + cocktail.idDrink; 
 
             const link = document.createElement('a');
+            link.id = 'agregar';
             link.href = 'agregarcocteles.html';
             link.className = 'btn btn-primary';
             link.textContent = 'Agregar al carrito';
@@ -179,9 +185,11 @@ function listadoCocteles() {
             cardTitle.textContent = cocktail.strDrink;
 
             const p = document.createElement('p');
+            p.id = 'precio';
             p.textContent = 'Precio: ' + cocktail.idDrink; 
 
             const link = document.createElement('a');
+            link.id = 'agregar';
             link.href = 'agregarcocteles.html';
             link.className = 'btn btn-primary';
             link.textContent = 'Agregar al carrito';
@@ -198,3 +206,54 @@ function listadoCocteles() {
     })
     .catch(error => console.error('Error:', error));
 }
+
+async function searchCocktail() {
+    const searchInput = document.getElementById('searchInput').value;
+    const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchInput}`);
+    const data = await response.json();
+
+    if (data.drinks) {
+        const cocktail = data.drinks[0];
+        const productImage = document.getElementById('productImage');
+        const productName = document.getElementById('productName');
+        const productPrice = document.getElementById('productPrice');
+        const quantity = document.getElementById('quantity');
+        const total = document.getElementById('total');
+
+        productImage.src = cocktail.strDrinkThumb;
+        productName.value = cocktail.strDrink;
+        productPrice.value = parseFloat(cocktail.idDrink);
+        quantity.value = 1; // Reset quantity to 1
+        total.value = productPrice.value; // Set initial total
+    } else {
+        alert('No se encontraron resultados.');
+    }
+}
+
+function calculateTotal() {
+    const quantity = document.getElementById('quantity').value;
+    const productPrice = document.getElementById('productPrice').value;
+    const total = document.getElementById('total');
+    total.value = (quantity * productPrice).toFixed(2);
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const link = document.getElementById('agregar');
+    if (link) {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const nombreCoctel = document.getElementById('nameCoctel').textContent;
+            localStorage.setItem('nombreCoctel', nombreCoctel);
+            window.location.href = 'agregarcocteles.html';
+        });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const nombreCoctel = localStorage.getItem('nombreCoctel');
+    const searchInput = document.getElementById('searchInput');
+    if (nombreCoctel && searchInput) {
+        searchInput.value = nombreCoctel;
+    }
+}); 

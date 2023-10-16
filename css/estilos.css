@@ -80,8 +80,14 @@
     gap: 20px; /* Ajusta el espacio entre los botones según sea necesario */
 }
 
-.base{
-    align-items: center;
+.base {
+    text-align: center;
+    width: 600px; /* Ajusta el ancho según sea necesario */
+    margin: 0 auto;
+    margin-top: 10%; /* Ajusta la distancia desde la parte superior según sea necesario */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px; /* Ajusta el relleno según sea necesario */
 }
 
 form {
@@ -125,3 +131,74 @@ input[type="submit"]:hover {
     font-weight: bold;
 }
 
+#searchContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    width: 70%;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    
+}
+
+#searchButton {
+    width: 150px;
+    height: 40px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+#productForm {
+    display: flex;
+    width: 70%;
+}
+
+.imagen-form {
+    flex: 1;
+}
+
+.imagen-form img {
+    width: 200px;
+    height: auto;
+}
+
+.base{
+    padding: 5%;
+}
+.cuerpo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.cuerpo label {
+    margin-bottom: 10px;
+}
+
+.cuerpo input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.cuerpo input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+}
